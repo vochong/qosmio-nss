@@ -33,6 +33,10 @@ jobs:
           git config user.email "github-actions@github.com"
           git add ./target/linux/generic/config-6.12
           git commit -m "Enable CONFIG_TCP_MD5SIG in config-6.12" || echo "No changes to commit"
+          
+      - name: Revert ath11k-firmware - Bump ath11k firmware to 2.12
+        run: |
+          git revert --no-edit c8ec238 || echo "Commit already reverted"
 
       - name: Git rebase to upstream/openwrt-25.12
         run: |

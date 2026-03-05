@@ -184,7 +184,7 @@ jobs:
       - name: Create a release
         uses: ncipollo/release-action@v1
         with:
-          name: "OpenWrt-25.12 Linksys WAX610y NSS ath11k WLAN.HK.2.12-01368 ${{ env.KERNEL_VERSION }} Image ${{ env.NOW }}"
+          name: "OpenWrt-25.12 Linksys WAX610y NSS ath11k WLAN.HK.2.9 ${{ env.KERNEL_VERSION }} Image ${{ env.NOW }}"
           tag: "linksys-wax610y-nss-${{ env.SHORT_SHA }}-${{ env.NOW }}"
           generateReleaseNotes: true
           makeLatest: false

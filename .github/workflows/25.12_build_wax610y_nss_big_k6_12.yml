@@ -1,4 +1,4 @@
-name: Netgear WAX610Y NSS K6.12 in GH Release
+name: OpenWrt-25.12 Netgear WAX610Y NSS K6.12 in GH Release
 on:
   workflow_dispatch:
 
@@ -34,12 +34,12 @@ jobs:
           git add ./target/linux/generic/config-6.12
           git commit -m "Enable CONFIG_TCP_MD5SIG in config-6.12" || echo "No changes to commit"
 
-      - name: Git rebase to upstream/main
+      - name: Git rebase to upstream/openwrt-25.12
         run: |
           git remote add upstream-openwrt https://git.openwrt.org/openwrt/openwrt.git
           git fetch upstream-openwrt
-          git rebase upstream-openwrt/main
-          git rebase --rebase-merges upstream-openwrt/main
+          git rebase upstream-openwrt/openwrt-25.12
+          git rebase --rebase-merges upstream-openwrt/openwrt-25.12
           
       - name: Search for kernel bump commits
         run: |  
@@ -180,7 +180,7 @@ jobs:
       - name: Create a release
         uses: ncipollo/release-action@v1
         with:
-          name: "Linksys WAX610y NSS ath11k WLAN.HK.2.12-01368 ${{ env.KERNEL_VERSION }} Image ${{ env.NOW }}"
+          name: "OpenWrt-25.12 Linksys WAX610y NSS ath11k WLAN.HK.2.12-01368 ${{ env.KERNEL_VERSION }} Image ${{ env.NOW }}"
           tag: "linksys-wax610y-nss-${{ env.SHORT_SHA }}-${{ env.NOW }}"
           generateReleaseNotes: true
           makeLatest: false

@@ -36,12 +36,12 @@ jobs:
         run: |
           git revert --no-edit c8ec238 || echo "Commit already reverted"
 
-      - name: Git rebase to upstream/main
+      - name: Git rebase to upstream/openwrt-25.12
         run: |
           git remote add upstream-openwrt https://git.openwrt.org/openwrt/openwrt.git
           git fetch upstream-openwrt
-          git rebase upstream-openwrt/main
-          git rebase --rebase-merges upstream-openwrt/main
+          git rebase upstream-openwrt/openwrt-25.12
+          git rebase --rebase-merges upstream-openwrt/openwrt-25.12
 
       #- name: Revert commits individually (inclusive) for 'treewide APK provides-related backports 21253'
       #  run: |

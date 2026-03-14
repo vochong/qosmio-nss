@@ -366,3 +366,9 @@ CONFIG_PACKAGE_kmod-nft-xfrm=y
 CONFIG_PACKAGE_kmod-xfrm-interface=y
 CONFIG_PACKAGE_luci-proto-xfrm=y
 CONFIG_PACKAGE_xfrm=y
+
+# Docker Support
+CONFIG_PACKAGE_podman=y
+CONFIG_PACKAGE_docker=y
+CONFIG_PACKAGE_dockerd=y
+CONFIG_PACKAGE_docker-compose=y

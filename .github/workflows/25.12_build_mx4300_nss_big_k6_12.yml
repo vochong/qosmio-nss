@@ -36,11 +36,10 @@ jobs:
         run: |
           TARGET_HASH=$(git log --grep="Bump ath11k firmware to 2.12" --format="%H" -n 1)
           if [ -z "$TARGET_HASH" ]; then
-            echo "Target commit not found. Proceeding with current state."
+            echo "Target commit not found. Proceeding."
           else
-            echo "Found commit $TARGET_HASH"
-            git revert --no-edit --no-commit $TARGET_HASH
-            echo "Revert applied to the runner filesystem."
+            echo "Reverting commit $TARGET_HASH"
+            git revert --no-edit $TARGET_HASH
           fi
 
       - name: Git rebase to upstream/openwrt-25.12

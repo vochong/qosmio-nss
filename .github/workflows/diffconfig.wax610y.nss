@@ -281,13 +281,8 @@ CONFIG_PACKAGE_speedtest-go=y
 CONFIG_PACKAGE_kmod-ramoops=y
 
 #####################################################################
-# Advanced Features (Docker & ZRAM)
+# Advanced Features ZRAM
 #####################################################################
-
-# Docker
-CONFIG_PACKAGE_docker=y
-CONFIG_PACKAGE_dockerd=y
-CONFIG_PACKAGE_docker-compose=y
 
 # ZRAM
 CONFIG_PACKAGE_kmod-zram=y

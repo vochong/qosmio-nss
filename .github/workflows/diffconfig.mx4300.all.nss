@@ -772,3 +772,9 @@ CONFIG_PACKAGE_modemmanager-rpcd=y
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_dockerd=y
 CONFIG_PACKAGE_docker-compose=y
+
+# Enable ZRAM Support
+CONFIG_PACKAGE_kmod-zram=y
+CONFIG_PACKAGE_zram-swap=y
+CONFIG_KERNEL_ZRAM=y
+CONFIG_KERNEL_ZRAM_DEF_COMP_LZ4=y

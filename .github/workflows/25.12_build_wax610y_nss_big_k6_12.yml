@@ -34,9 +34,16 @@ jobs:
           git add ./target/linux/generic/config-6.12
           git commit -m "Enable CONFIG_TCP_MD5SIG in config-6.12" || echo "No changes to commit"
           
-      - name: Revert ath11k-firmware - Bump ath11k firmware to 2.12
+      - name: Local revert of ath11k firmware 2.12
         run: |
-          git revert --no-edit c8ec238 || echo "Commit already reverted"
+          TARGET_HASH=$(git log --grep="Bump ath11k firmware to 2.12" --format="%H" -n 1)
+          if [ -z "$TARGET_HASH" ]; then
+            echo "Target commit not found. Proceeding with current state."
+          else
+            echo "Found commit $TARGET_HASH"
+            git revert --no-edit --no-commit $TARGET_HASH
+            echo "Revert applied to the runner filesystem."
+          fi
 
       - name: Git rebase to upstream/openwrt-25.12
         run: |

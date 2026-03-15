@@ -768,7 +768,7 @@ CONFIG_MODEMMANAGER_WITH_AT_COMMAND_VIA_DBUS=y
 CONFIG_PACKAGE_modemmanager-rpcd=y
 
 # Docker Support
-CONFIG_PACKAGE_podman=y
+# CONFIG_PACKAGE_podman is not set
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_dockerd=y
 CONFIG_PACKAGE_docker-compose=y

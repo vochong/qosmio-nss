@@ -1,4 +1,4 @@
-name: OpenWrt-25.12 Linksys MX4300 NSS K6.12 in GH Release
+name: OpenWrt-25.12 Docker - Linksys MX4300 NSS K6.12 in GH Release
 on:
   workflow_dispatch:
 

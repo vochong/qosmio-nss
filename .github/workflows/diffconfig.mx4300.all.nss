@@ -773,6 +773,7 @@ CONFIG_PACKAGE_modemmanager-rpcd=y
 CONFIG_PACKAGE_docker=y
 CONFIG_PACKAGE_dockerd=y
 CONFIG_PACKAGE_docker-compose=y
+CONFIG_PACKAGE_luci-app-dockerman=y
 
 # Enable ZRAM Support
 CONFIG_PACKAGE_kmod-zram=y
